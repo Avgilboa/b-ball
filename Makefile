@@ -26,5 +26,5 @@ valgrind: test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./test 2>&1 | { egrep "lost| at " || true; }
 
 clean:
-	rm -f *.o test*
-	rm -f StudentTest*.cpp
+	rm -f *.o test
+	rm -f StudentTest*

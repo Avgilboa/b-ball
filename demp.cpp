@@ -1,4 +1,8 @@
-// clang++ Try.cpp -o try
+#include "Game.hpp"
+#include "Team.hpp"
+#include "Schedule.hpp"
+#include "Team.hpp"
+#include "Leauge.hpp"
 #include <iostream>
 #include <string>
 #include <map>

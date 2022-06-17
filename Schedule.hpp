@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Leauge.hpp"
 /**
  * @file Schedule.hpp

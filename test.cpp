@@ -2,7 +2,7 @@
 #include "Team.hpp"
 #include "Schedule.hpp"
 #include "Team.hpp"
-#include "League.hpp"
+#include "Leauge.hpp"
 
 int main()
 {

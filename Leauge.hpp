@@ -12,18 +12,20 @@ class Game;
  *
  */
 
-class League{
-    private:
-        std::vector<Team> _Teams;
-        bool _start;
-        Schedule schedule;
-    public:
-        League();
-        League& AddTeam(const Team&  T);
-        League& AddTeam(std::string name , double talent);
-        bool StartLeague();
-        bool checkAvialbleName(const std::string & name) const;
-        void printTeams() const;
-        bool FillTeams();
-        void PlayRound();
-};  
+class League
+{
+private:
+    std::vector<Team> _Teams;
+    bool _start;
+    Schedule schedule;
+
+public:
+    League();
+    League &AddTeam(const Team &T);
+    League &AddTeam(std::string name, double talent);
+    bool StartLeague();
+    bool checkAvialbleName(const std::string &name) const;
+    void printTeams() const;
+    bool FillTeams();
+    void PlayRound();
+};

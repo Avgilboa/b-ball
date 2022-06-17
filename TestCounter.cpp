@@ -2,8 +2,6 @@
 #include "doctest.h"
 using namespace doctest;
 
-
-
 struct ReporterGrader : public ConsoleReporter
 {
     ReporterGrader(const ContextOptions &input_options)

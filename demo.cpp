@@ -27,8 +27,6 @@ int main()
     league.printTeams();
     league.PlayRound();
 
-
-
     return 0;
 }
 

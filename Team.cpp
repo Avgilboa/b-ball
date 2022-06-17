@@ -1,7 +1,9 @@
 #include "Team.hpp"
 static unsigned int UniqIndex = 1;
-Team::Team(const std::string name,double talent, bool bot){
-    if(talent>=1 || talent <=0){
+Team::Team(const std::string name, double talent, bool bot)
+{
+    if (talent >= 1 || talent <= 0)
+    {
         throw std::runtime_error("The talent parameter needs to be between 0 to 1");
     }
     this->_name = name;
@@ -9,24 +11,29 @@ Team::Team(const std::string name,double talent, bool bot){
     this->_bot = bot;
     this->_index = UniqIndex++;
 
-    this->_statistics._numOfGame =0;
-    this->_statistics._BalancePoints=0;
-    this->_statistics._numOfWin =0;
-    this->_statistics._numOfLose =0;
+    this->_statistics._numOfGame = 0;
+    this->_statistics._BalancePoints = 0;
+    this->_statistics._numOfWin = 0;
+    this->_statistics._numOfLose = 0;
 }
 
 void Team::updateStatistics(int BalancePoints, bool IsWinner)
 {
     this->_statistics._numOfGame++;
     this->_statistics._BalancePoints += BalancePoints;
-    if(IsWinner){
-        this->_statistics._numOfWin++;}
-    else{
-        this->_statistics._numOfLose++;}
+    if (IsWinner)
+    {
+        this->_statistics._numOfWin++;
+    }
+    else
+    {
+        this->_statistics._numOfLose++;
+    }
 }
 
-void Team::print(){
-    std::cout<<"********************************************************\n";
+void Team::print()
+{
+    std::cout << "********************************************************\n";
     std::cout << "Team name                 :   " << this->_name << "\n";
     std::cout << "current talent of the Team:   " << this->_talent << "\n";
     std::cout << "Index Team                :   " << this->_index << "\n";
@@ -36,18 +43,22 @@ void Team::print(){
     std::cout << "Number of winnig game     :   " << this->_statistics._numOfWin << "\n";
     std::cout << "Number of losing game     :   " << this->_statistics._numOfLose << "\n";
     std::cout << "Balance points            :   " << this->_statistics._BalancePoints << "\n";
-    std::cout<<"********************************************************\n";
-    std::cout << std::endl << std::endl;
+    std::cout << "********************************************************\n";
+    std::cout << std::endl
+              << std::endl;
 }
 
-std::string Team::GetName() const{
+std::string Team::GetName() const
+{
     return this->_name;
 }
 
-double Team::GetTalnt() const {
+double Team::GetTalnt() const
+{
     return this->_talent;
 }
 
-statistics& Team::GetStatistic(){
+statistics &Team::GetStatistic()
+{
     return this->_statistics;
 }

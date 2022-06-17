@@ -12,12 +12,27 @@
 #include <chrono>
 
 using namespace std;
-int main(){
+int main()
+{
+    Team dolev("dolev_Team", 0.5);
+    Team yakov("yakov_Team", 0.6);
+    Team daniel("daniel_Team", 0.7);
+    Team aviad("aviad_Team", 0.8);
+    League league;
+    league.AddTeam(dolev);
+    league.AddTeam(yakov);
+    league.AddTeam(daniel);
+    league.AddTeam(aviad);
+    league.StartLeague();
+    league.printTeams();
     
+
+
+
     return 0;
 }
 
-/* 
+/*
 Saves for testing:
     Team T("Aviad",0.9);
     League L,a,s,d,f;
@@ -28,5 +43,5 @@ Saves for testing:
     f.StartLeague();
     L.StartLeague();
     L.printTeams();
-    
+
     */

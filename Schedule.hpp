@@ -1,14 +1,9 @@
-<<<<<<< HEAD
+#pragma once
 #include <algorithm>
 #include <deque>
 #include <map>
 #include <vector>
 #include <iostream>
-=======
-#pragma once
-
-#include "Leauge.hpp"
->>>>>>> cb3698704121668aa182a924ebef30961964b9ac
 /**
  * @file Schedule.hpp
  * @author Aviad Gilboa

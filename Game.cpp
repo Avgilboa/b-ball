@@ -10,6 +10,7 @@ Game::Game(Team& Home,Team& out): _Home(Home), _Out(out){
         }
         _Home.updateStatistics(home-away, home >away);
         _Out.updateStatistics(away-home, home <away);
+        PrintRes(home, away);
     }
 
 int Game::add_bonus(double talent){
@@ -47,8 +48,11 @@ int Game::MakeHomeRes(){
 
 }
 
-void Game::PrintRes(){
-    std::cout << " printing the summery of the game ";
+void Game::PrintRes(int homePoint, int awayPoint){
+    std::cout << "*****************************************\n"
+              << "         This Game is between             \n"
+             << " Home Team " << _Home.GetName() <<"  Away Team " << _Out.GetName() << " \n"
+             << " The result is " << _Home.GetName() << " = " << homePoint << "   " << _Out.GetName() << " = " << awayPoint <<std::endl;
 }
 
 

@@ -1,6 +1,6 @@
 #include "Schedule.hpp"
 
-Schedule::Schedule():NumRound(0), const_team(1){
+Schedule::Schedule():Teams(),NumRound(0), const_team(1){
     for(int i=0; i<20;i++){Teams.push_back(i+1);}
 }
 

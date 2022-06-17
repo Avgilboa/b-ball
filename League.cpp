@@ -97,6 +97,6 @@ void League::PlayRound(){
     std::map<int,int> round = this->schedule.GetRound();
     for (auto &[first, second] : round)
     {
-        Game(this->_Teams.at((unsigned long) first-1), this->_Teams.at( (unsigned long) second-1));
+        Game(this->_Teams.at((unsigned long) first), this->_Teams.at( (unsigned long) second));
     }
 }

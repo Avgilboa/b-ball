@@ -25,7 +25,7 @@ int main()
     league.AddTeam(aviad);
     league.StartLeague();
     league.printTeams();
-    
+    league.PlayRound();
 
 
 

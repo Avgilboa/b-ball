@@ -16,7 +16,7 @@ class League{
     private:
         std::vector<Team> _Teams;
         bool _start;
-        Schedule* schedule;
+        Schedule schedule;
     public:
         League();
         League& AddTeam(const Team&  T);

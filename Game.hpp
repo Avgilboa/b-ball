@@ -19,6 +19,8 @@ class Game{
 
     public:
         Game( Team& Home, Team& out);
+        Game() = default;
+        ~Game() = default;
         int add_bonus(double talent);
         int MakeHomeRes();
         int MakeAwayRes();

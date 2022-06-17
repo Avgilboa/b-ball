@@ -29,7 +29,8 @@ class Team{
         bool _bot; // This means if the team generate by the player or by the computer.
         statistics _statistics;
     public:
-
+        Team() = default;
+        ~Team() = default;
         Team(const std::string name,double talent, bool bot = false);
         void updateStatistics(int BalancePoints, bool IsWinner);
         void print();

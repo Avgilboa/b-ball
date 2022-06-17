@@ -4,7 +4,7 @@ double pickTalent();
 
 
 League::League() {
-    *schedule;
+
     this->_Teams.clear();
     this->_start = false;
 }
@@ -65,7 +65,7 @@ std::string pickName(){
     std::uniform_int_distribution<int> in(0,19);
     int index1 = in(mt);
     int index2 = in(mt);
-    std::string name = vibes.at(index2) + " "+ names.at(index1);
+    std::string name = vibes.at((unsigned long) index2) + " "+ names.at((unsigned long) index1);
 
     return name;
 }
@@ -94,9 +94,9 @@ void League::printTeams() const{
 
 
 void League::PlayRound(){
-    std::map<int,int> round = this->schedule->GetRound();
+    std::map<int,int> round = this->schedule.GetRound();
     for (auto &[first, second] : round)
     {
-        Game(this->_Teams.at(first-1), this->_Teams.at(second-1));
+        Game(this->_Teams.at((unsigned long) first-1), this->_Teams.at( (unsigned long) second-1));
     }
 }

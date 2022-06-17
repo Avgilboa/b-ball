@@ -9,14 +9,14 @@ TIDY_FLAGS=-extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cpp
 TEST_SOURCES=Schedule.cpp League.cpp Game.cpp Team.cpp test.cpp
 TEST_O=Schedule.o League.o Game.o Team.o
 
-run: demo test
+run: test demo
 
 files:
 	$(CXX) $(CXXFLAGS) $(TEST_SOURCES) -c
 
 demo:files
 	@echo "Running demo..."
-	@$(CXX) $(CXXFLAGS) $(TEST_O) -o demo
+	@$(CXX) $(CXXFLAGS) $(TEST_O) -o demo demo.cpp
 	@./demo
 
 

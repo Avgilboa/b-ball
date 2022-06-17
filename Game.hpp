@@ -18,7 +18,7 @@ class Game{
         Team _Out;
 
     public:
-        Game(const Team& Home,const Team& out);
+        Game( Team& Home, Team& out);
         int add_bonus(double talent);
         int MakeHomeRes();
         int MakeAwayRes();

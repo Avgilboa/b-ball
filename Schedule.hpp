@@ -23,7 +23,7 @@ class Schedule{
     public:
         Schedule();
         std::map<int, int>& GetRound();
-        void OrderNextRount();
+        void OrderNextRound();
 
 
 };

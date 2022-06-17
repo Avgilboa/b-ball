@@ -92,14 +92,11 @@ void League::printTeams() const{
     }
 }
 
-std::vector<int> Game(double Home_Talent , double Away_Talent){
-    std::vector <int> res(2,0);
-     std::random_device rd{};
-    std::mt19937 gen{rd()};
- 
-    // values near the mean are the most likely
-    // standard deviation affects the dispersion of generated values from the mean
-    std::normal_distribution<> d{80,8};
 
-    res.push_back(d(gen));
+void League::PlayRound(){
+    std::map<int,int> round = this->schedule->GetRound();
+    for (auto &[first, second] : round)
+    {
+        Game(this->_Teams.at(first-1), this->_Teams.at(second-1));
+    }
 }

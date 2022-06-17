@@ -2,6 +2,7 @@
 #include "Game.hpp"
 #include "Schedule.hpp"
 class Schedule;
+class Game;
 /**
  * @file Leauge.hpp
  * @author Aviad Gilboa
@@ -15,6 +16,7 @@ class League{
     private:
         std::vector<Team> _Teams;
         bool _start;
+        Schedule* schedule;
     public:
         League();
         League& AddTeam(const Team&  T);
@@ -23,6 +25,5 @@ class League{
         bool checkAvialbleName(const std::string & name) const;
         void printTeams() const;
         bool FillTeams();
-        Schedule* schedule;
-        std::vector<int> Game(double Home_Talent , double Away_Talent);
+        void PlayRound();
 };  

@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game(const Team& Home,const Team& out): _Home(Home), _Out(out){
+Game::Game(Team& Home,Team& out): _Home(Home), _Out(out){
         int away = MakeAwayRes() + add_bonus(_Out.GetTalnt());
         int home = MakeHomeRes() + add_bonus(Home.GetTalnt());
         if(home == away)

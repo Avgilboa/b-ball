@@ -9,15 +9,30 @@ TIDY_FLAGS=-extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cpp
 TEST_SOURCES=Schedule.cpp League.cpp Game.cpp Team.cpp test.cpp
 TEST_O=Schedule.o League.o Game.o Team.o
 
-run: test
+run: demo test
 
 files:
 	$(CXX) $(CXXFLAGS) $(TEST_SOURCES) -c
 
-test:files
+demo:files
+	@echo "Running demo..."
+	@$(CXX) $(CXXFLAGS) $(TEST_O) -o demo
+	@./demo
+
+
+test:files TestCounter.o Test.o
 	@echo "Running tests..."
-	@$(CXX) $(CXXFLAGS) -o test $(TEST_O)  test.cpp
+	@$(CXX) $(CXXFLAGS) -o test $(TEST_O)   test.cpp TestCounter.o Test.o
 	@./test
+
+TestCounter.o:
+	@echo "Compiling TestCounter.cpp..."
+	@$(CXX) $(CXXFLAGS) -c TestCounter.cpp
+
+Test.o:
+	@echo "Compiling Test.cpp..."
+	@$(CXX) $(CXXFLAGS) -c Test.cpp
+
 
 tidy:
 	clang-tidy $(SOURCES) $(HEADERS) $(TIDY_FLAGS) --

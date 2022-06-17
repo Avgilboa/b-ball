@@ -1,7 +1,7 @@
 #pragma once
 #include "Game.hpp"
 #include "Schedule.hpp"
-
+class Schedule;
 /**
  * @file Leauge.hpp
  * @author Aviad Gilboa
@@ -10,7 +10,7 @@
  * All league has 20 Teams.
  *
  */
-class Schedule;
+
 class League{
     private:
         std::vector<Team> _Teams;

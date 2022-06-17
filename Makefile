@@ -43,3 +43,4 @@ valgrind: test
 clean:
 	rm -f *.o test
 	rm -f StudentTest*
+	rm -f demo

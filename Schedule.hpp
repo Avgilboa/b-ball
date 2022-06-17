@@ -1,4 +1,8 @@
-#include "Leauge.hpp"
+#include <algorithm>
+#include <deque>
+#include <map>
+#include <vector>
+#include <iostream>
 /**
  * @file Schedule.hpp
  * @author Aviad Gilboa
@@ -10,10 +14,15 @@
 
 class Schedule{
     private:
-        std::map<unsigned int, std::map<unsigned int, unsigned int>> season;
+        int NumRound;
+        int const_team;
+        std::vector<int> Teams;
         //// number of round ---> Home team, Away Team
+        std::map <int, int> round;
     public:
         Schedule();
-        
-        void orgenizeSeason(unsigned int numberTeams);
+        std::map<int, int>& GetRound();
+        void OrderNextRount();
+
+
 };

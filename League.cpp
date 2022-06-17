@@ -3,7 +3,8 @@ std::string pickName();
 double pickTalent();
 
 
-League::League() : schedule(){
+League::League() {
+    *schedule;
     this->_Teams.clear();
     this->_start = false;
 }

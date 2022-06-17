@@ -24,6 +24,6 @@ class League{
         bool checkAvialbleName(const std::string & name) const;
         void printTeams() const;
         bool FillTeams();
-        Schedule schedule;
+        Schedule* schedule;
         std::vector<int> Game(double Home_Talent , double Away_Talent);
 };  

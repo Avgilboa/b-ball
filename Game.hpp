@@ -1,3 +1,4 @@
+#pragma once
 #include "Team.hpp"
 #include <chrono>
 

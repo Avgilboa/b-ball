@@ -1,6 +1,5 @@
 #include "Team.hpp"
-static unsigned int UniqIndex = 1;
-Team::Team(const std::string name, double talent, bool bot)
+Team::Team(const std::string name, double talent,uint index, bool bot)
 {
     if (talent >= 1 || talent <= 0)
     {
@@ -9,7 +8,7 @@ Team::Team(const std::string name, double talent, bool bot)
     this->_name = name;
     this->_talent = talent;
     this->_bot = bot;
-    this->_index = UniqIndex++;
+    this->_index = index;
 
     this->_statistics._numOfGame = 0;
     this->_statistics._BalancePoints = 0;
@@ -19,13 +18,13 @@ Team::Team(const std::string name, double talent, bool bot)
 
 void Team::updateStatistics(int BalancePoints, bool IsWinner)
 {
-    this->_statistics._numOfGame++;
+    this->_statistics._numOfGame+=1;;
     this->_statistics._BalancePoints += BalancePoints;
     if (IsWinner)
     {
         this->_statistics._numOfWin++;
     }
-    else
+    if(!IsWinner)
     {
         this->_statistics._numOfLose++;
     }
@@ -36,7 +35,7 @@ void Team::print()
     std::cout << "********************************************************\n";
     std::cout << "Team name                 :   " << this->_name << "\n";
     std::cout << "current talent of the Team:   " << this->_talent << "\n";
-    std::cout << "Index Team                :   " << this->_index << "\n";
+    std::cout << "Index Team                :   " << this->_index+1 << "\n";
     std::cout << "------------------------------------------------------\n";
     std::cout << "________________________statistics____________________\n";
     std::cout << "Total game played         :   " << this->_statistics._numOfGame << "\n";

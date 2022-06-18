@@ -18,6 +18,7 @@ private:
     std::vector<Team> _Teams;
     bool _start;
     Schedule schedule;
+    uint PlayedRound;
 
 public:
     League();
@@ -28,4 +29,7 @@ public:
     void printTeams() const;
     bool FillTeams();
     void PlayRound();
+    void playLeague();
+    uint size(){return _Teams.size();}
+    void Table();
 };

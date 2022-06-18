@@ -2,7 +2,7 @@
 std::string pickName();
 double pickTalent();
 
-League::League()
+League::League() : PlayedRound(0)
 {
 
     this->_Teams.clear();
@@ -14,20 +14,21 @@ League &League::AddTeam(const Team &T)
     if (checkAvialbleName(T.GetName()))
     {
         this->_Teams.push_back(T);
-        return *this;
+        
     }
-
-    throw std::runtime_error("this  name already exist");
+    return *this;
 }
 
 League &League::AddTeam(std::string name, double talent)
 {
-    if (checkAvialbleName(name))
-    {
-        this->_Teams.push_back(Team(name, talent));
-        return *this;
+    if(this->size()==20){
+        throw std::logic_error("League is full");
     }
-    throw std::runtime_error("this name already exist");
+        if (checkAvialbleName(name))
+        {
+            this->_Teams.push_back(Team(name, talent, this->size()));  
+        }
+    return *this;
 }
 
 bool League::StartLeague()
@@ -39,19 +40,11 @@ bool League::StartLeague()
 bool League::FillTeams()
 {
 
-    for (unsigned int i = this->_Teams.size(); i < 20; i++)
+    while(this->size()<20)
     {
         std::string name = pickName();
         double talent = pickTalent();
-        try
-        {
-            checkAvialbleName(name);
-            AddTeam(Team(name, talent, true));
-        }
-        catch (const std::exception &e)
-        {
-            std::cerr << e.what() << '\n';
-        }
+        AddTeam(Team(name, talent, _Teams.size()));
     }
     return true;
 }
@@ -103,9 +96,22 @@ void League::printTeams() const
 
 void League::PlayRound()
 {
+    PlayedRound+=1;
     std::map<int, int> round = this->schedule.GetRound();
     for (auto &[first, second] : round)
     {
         Game(this->_Teams.at((unsigned long)first), this->_Teams.at((unsigned long)second));
     }
+}
+const uint numberRound=38;
+void League::playLeague(){
+    while(PlayedRound<numberRound){
+        this->PlayRound();
+    }
+}
+
+void League::Table(){
+    std::vector<Team> table(_Teams);
+    std::sort(table.begin(),table.end(),[](Team& t1, Team& t2){return t1.GetStatistic()._numOfGame > t2.GetStatistic()._numOfWin;});
+
 }

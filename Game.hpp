@@ -15,13 +15,11 @@
 class Game
 {
 private:
-    Team _Home;
-    Team _Out;
+    Team& _Home;
+    Team& _Out;
 
 public:
     Game(Team &Home, Team &out);
-    Game() = default;
-    ~Game() = default;
     int add_bonus(double talent);
     int MakeHomeRes();
     int MakeAwayRes();

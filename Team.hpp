@@ -34,7 +34,7 @@ private:
 public:
     Team() = default;
     ~Team() = default;
-    Team(const std::string name, double talent, bool bot = false);
+    Team(const std::string name, double talent,uint index, bool bot = false);
     void updateStatistics(int BalancePoints, bool IsWinner);
     void print();
     std::string GetName() const;

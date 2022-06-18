@@ -17,7 +17,6 @@ Game::Game(Team &Home, Team &out) : _Home(Home), _Out(out)
     }
     _Home.updateStatistics(home - away, home > away);
     _Out.updateStatistics(away - home, home < away);
-    PrintRes(home, away);
 }
 
 int Game::add_bonus(double talent)

@@ -14,21 +14,20 @@
 using namespace std;
 int main()
 {
-    Team dolev("dolev_Team", 0.5);
-    Team yakov("yakov_Team", 0.6);
-    Team daniel("daniel_Team", 0.7);
-    Team aviad("aviad_Team", 0.8);
     League league;
-    league.AddTeam(dolev);
-    league.AddTeam(yakov);
-    league.AddTeam(daniel);
-    league.AddTeam(aviad);
+    league.AddTeam("dolev_Team", 0.5);
+    league.AddTeam("yakov_Team", 0.6);
+    league.AddTeam("daniel_Team", 0.7);
+    league.AddTeam("aviad_Team", 0.8);
     league.StartLeague();
+    league.playLeague();
     league.printTeams();
-    league.PlayRound();
 
     return 0;
 }
+
+/* 
+  */
 
 /*
 Saves for testing:
